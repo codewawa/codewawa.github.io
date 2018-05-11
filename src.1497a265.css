@@ -449,6 +449,39 @@ pre, code {
   top: 0;
   left: 0;
   z-index: -1; }
+.command-line-prompt {
+	border-right: 1px solid #999;
+	display: block;
+	float: left;
+	font-size: 100%;
+	letter-spacing: -1px;
+	margin-right: 1em;
+	pointer-events: none;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.command-line-prompt > span:before {
+	color: #999;
+	content: ' ';
+	display: block;
+	padding-right: 0.8em;
+}
+
+.command-line-prompt > span[data-user]:before {
+	content: "[" attr(data-user) "@" attr(data-host) "] $";
+}
+
+.command-line-prompt > span[data-user="root"]:before {
+	content: "[" attr(data-user) "@" attr(data-host) "] #";
+}
+
+.command-line-prompt > span[data-prompt]:before {
+	content: attr(data-prompt);
+}
 .tutorials__container {
   display: flex;
   justify-content: space-between;
@@ -475,11 +508,27 @@ pre, code {
       margin-bottom: 0; }
   .tutorial__article {
     line-height: 1.8em; }
+    .tutorial__article__end {
+      border-top: 3px dashed #2F7EFF;
+      padding-top: 10px;
+      margin-top: 30px; }
     .tutorial__article p {
       font-size: 1.2em; }
     .tutorial__article img, .tutorial__article iframe, .tutorial__article video {
       width: 100%;
       margin: 10px 0 10px 0; }
     .tutorial__article a {
-      text-decoration: underline;
-      cursor: pointer; }
+      text-decoration: none;
+      cursor: pointer;
+      position: relative; }
+      .tutorial__article a::after {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #38E7EA;
+        transition: .2s all; }
+      .tutorial__article a:hover::after {
+        height: 100%; }
