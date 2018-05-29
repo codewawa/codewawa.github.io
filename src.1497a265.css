@@ -344,6 +344,11 @@ pre, code {
 
 pre, code {
   overflow: hidden; }
+.0presentation__jslogo {
+  margin-bottom: 10em; }
+
+pre, code {
+  overflow: hidden; }
 .card {
   width: 25%;
   border-radius: 3px;
@@ -434,7 +439,8 @@ pre, code {
   background: linear-gradient(30deg, #7200FF, #2F7EFF, #38E7EA);
   color: white;
   transition: .2s all;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: 2; }
   .presentation__header * {
     visibility: hidden; }
   .presentation__header:hover {
@@ -447,8 +453,7 @@ pre, code {
   width: 100vw;
   height: 100vh;
   top: 0;
-  left: 0;
-  z-index: -1; }
+  left: 0; }
 .command-line-prompt {
 	border-right: 1px solid #999;
 	display: block;
